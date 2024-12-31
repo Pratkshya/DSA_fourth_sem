@@ -1,6 +1,6 @@
 #include <stdio.h>
-long int table[1000];
-long int Fibo(int n)
+long long int table[1000];
+long long int Fibo(int n)
 {
   if(n==1 || n==2) //Base case
    return 1;
@@ -23,6 +23,6 @@ int main()
   }
   printf("Enter a number: ");
   scanf("%d", &n);
-  printf("Answer is: %ld ", Fibo(n));
+  printf("Answer is: %lld ", Fibo(n));
   return 0;
 }
