@@ -12,16 +12,17 @@ nodeA.next = nodeB
 nodeB.next = nodeC
 nodeC.next = nodeD
 
-newNode = Node(77)
-head = nodeA
-current = head
-while current.next is not None: 
+newNode = Node(27)
+
+current = nodeA
+while current is not None and current.data != 5:
     current = current.next
+newNode.next = current.next    
 current.next = newNode
 
-current = head
+
+current = nodeA
 while current is not None:
     print(current.data, end=" -->  ")
     current = current.next
 print("None")      
-        
