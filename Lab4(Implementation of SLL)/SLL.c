@@ -97,8 +97,28 @@ void delete_at_the_beginning()
         free(temp);
     }  
 }
-void deletion_at_the_end(element)
+void deletion_at_the_end()
 {
+    struct SLL *temp = first;
+    if(first == NULL)
+        printf("List is empty\n");
+    else if (first -> next == NULL)
+    {
+        first = last = NULL;
+        printf("%d is going to be deleted\n", temp -> data);
+        free(temp);
+    }  
+    else
+    {
+        while (temp -> next != last)
+            {
+                temp = temp -> next;
+            }
+            last = temp;
+            temp = last -> next;
+            free(temp);
+            last -> next = NULL;
+    }
     
 }
 void display()
@@ -119,7 +139,10 @@ void display()
         
     }
 }
-
+void searching()
+{
+    
+}
 int main()
 {
     insert_at_the_beginning(100);
@@ -131,6 +154,8 @@ int main()
     insert_at_the_specific_position(600, 3);
     display();
     delete_at_the_beginning();
+    display();
+    deletion_at_the_end();
     display();
     return 0;
 }
