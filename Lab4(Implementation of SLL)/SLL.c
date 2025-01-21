@@ -139,9 +139,28 @@ void display()
         
     }
 }
-void searching()
+void searching(int element)
 {
-    
+    struct SLL *temp = first;
+    int position = 1;
+    int found = 0;
+
+    while (temp != NULL)
+    {
+        if (temp->data == element)
+        {
+            printf("Element %d found at position %d\n", element, position);
+            found = 1;
+            break;
+        }
+        temp = temp->next;
+        position++;
+    }
+
+    if (!found)
+    {
+        printf("Element %d not found in the list\n", element);
+    }
 }
 int main()
 {
@@ -156,6 +175,8 @@ int main()
     delete_at_the_beginning();
     display();
     deletion_at_the_end();
+    display();
+    searching(500);
     display();
     return 0;
 }
