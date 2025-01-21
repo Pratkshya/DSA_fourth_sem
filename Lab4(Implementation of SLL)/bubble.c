@@ -40,6 +40,6 @@ int main()
     end = clock();
     diff = end - start;
     display(A,n);
-    printf("Time = %.6f seconds\n", (float)((diff)/CLOCKS_PER_SEC));
+    printf("Time = %.6f seconds\n", (double)((diff)/CLOCKS_PER_SEC));
     return 0;
 }
